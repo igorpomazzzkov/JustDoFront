@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <div class="toggle" fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+    <div class="toggle-left" fxLayoutAlign="start center" fxFlex="20">
+        <button mat-icon-button fxHide fxShow.lt-md aria-label="open menu" (click)="toggleSidenav()">
+            <mat-icon>{{isMenuOpen ? 'menu_open' : 'menu'}}</mat-icon>
+          </button>
+        <span class="logo">YouDo</span>
+    </div>
+    <div class="toggle-right" fxLayout="row" fxLayoutAlign="end center" fxFlex="80" fxFlex.lt-md="50">
+        <div fxHide.lt-md class="menu" fxLayout="row" fxLayoutAlign="end center" fxFlex="50">
+          <a mat-button [routerLink]="['/tasks']" routerLinkActive="router-link-active">Найти задание</a>
+          <a mat-button [routerLink]="['/task']" routerLinkActive="router-link-active">Добавить задание</a>
+        </div>
+        <div class="menu-user"
+        fxFlex="35"
+        fxLayoutGap="10px"
+        fxLayoutGap.sm="0"
+        fxLayout="row"
+        fxLayoutAlign="end center">
+          <span fxHide.lt-md class="user-name">First Name Last Name</span>
+          <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png">
+        </div>
+        <div class="toggle-slide" fxFlex="15" fxFlex.sm="30" fxFlex.xs="70" fxLayoutAlign="end center">
+            <mat-slide-toggle
+            color="accent"
+            [checked]="isDarkTheme | async"
+            (change)="toggleDarkTheme($event.checked)">
+              Dark
+            </mat-slide-toggle>
+        </div>
+    </div>
+  </div>
+</mat-toolbar>
+<app-sidenav [isMenuOpen]="isMenuOpen"></app-sidenav>

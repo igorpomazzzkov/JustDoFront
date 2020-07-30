@@ -1,0 +1,70 @@
+<div class="wrapper" fxLayoutAlign="center center">
+  <form
+  [formGroup]="taskForm"
+  (ngSubmit)="onSubmit(taskForm.value)"
+  fxFlex="50"
+  fxFlex.lt-md="80"
+  fxLayout="column">
+      <mat-form-field appearance="legacy">
+        <mat-label>Что нужно сделать?</mat-label>
+        <input matInput [value]="taskName" formControlName="name">
+        <mat-hint>Уборка в квартире</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <textarea matInput placeholder="Описание задания" [value]="description" formControlName="description"></textarea>
+      </mat-form-field>
+
+      <div class="category" fxLayoutAlign="space-around center">
+        <mat-form-field fxFlex="49">
+          <mat-label>{{this.category.name}}</mat-label>
+          <mat-select formControlName="category" #categorySelect (selectionChange)="categoryChange(categorySelect.value)">
+            <mat-option
+            *ngFor="let category of categories" [value]="category" >
+              {{category.name}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="49">
+        <mat-label>{{task.subcategory.name}}</mat-label>
+        <mat-select #subcategorySelect (selectionChange)="subcategoryChange(subcategorySelect.value)">
+          <mat-option *ngFor="let subcategory of subcategories" [value]="subcategory">
+            {{subcategory.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="region" fxLayoutAlign="space-around center">
+      <mat-form-field fxFlex="49">
+        <mat-label>{{this.region.name}}</mat-label>
+        <mat-select #regionSelect (selectionChange)="regionChange(regionSelect.value)">
+          <mat-option *ngFor="let region of regions" [value]="region">
+            {{region.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="49">
+        <mat-label>{{cityLabel}}</mat-label>
+        <mat-select #citySelect (selectionChange)="cityChange(citySelect.value)">
+          <mat-option *ngFor="let city of cities" [value]="city">{{city.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Цена</mat-label>
+      <input type="number" formControlName="price" matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Дата выполнения</mat-label>
+      <input matInput type="datetime-local" formControlName="completion" placeholder="completion date">
+    </mat-form-field>
+
+    <button color="primary" mat-raised-button type="submit">ok</button>
+  </form>
+</div>
+

@@ -1,0 +1,11 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav autoFocus="false" [(opened)]="isMenuOpen" mode="over" class="sidenav">
+    <a mat-button routerLink="/tasks">Tasks</a>
+    <a mat-button routerLink="/task">add task</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

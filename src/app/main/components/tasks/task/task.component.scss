@@ -1,0 +1,59 @@
+.task{
+  margin: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 7px 12px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 12px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 12px -6px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(24, 24, 209);
+}
+
+.price{
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(235, 177, 53);
+}
+
+.name-price{
+  margin-bottom: 5px;
+}
+
+.description{
+  font-size: 14px;
+}
+
+.date{
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.city{
+  font-size: 14px;
+}
+
+.user{
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: rgb(224, 159, 38);
+}
+
+.user-div{
+  margin-top: 10px;
+}
+
+.user-div > img{
+  height: 40px;
+  width: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}

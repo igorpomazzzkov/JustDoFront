@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+@import '../../../../custom-theme.scss';
+
+.filter{
+  height: 500px;
+  border-radius: 20px;
+  -webkit-box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+  box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+}
+
+form{
+  padding: 10px;
+  width: 90%;
+}
+
+.price > div {
+  width: 100%;
+}
+
+.price > div > mat-form-field{
+  width: 49%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.filter-button{
+  position: fixed;
+  right: 5%;
+  color: white;
+  bottom: 10%;
+}

@@ -1,0 +1,29 @@
+.toggle{
+  width: 100%;
+}
+
+.toggle,
+.toggle-right,
+.toggle-left,
+.toggle-slide,
+.menu-user,
+.menu{
+  height: 100%;
+}
+
+.menu-user > img{
+  height: 40px;
+  width: 50px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+mat-slide-toggle{
+  height: 100%;
+  font-size: 16px;
+}
+
+.user-name{
+  font-size: 16px
+}

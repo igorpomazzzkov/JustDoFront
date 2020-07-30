@@ -1,0 +1,52 @@
+<div fxFlex="100" fxLayoutAlign="center center">
+  <div fxLayoutAlign="center" fxLayout="column">
+      <mat-form-field fxFlex="100">
+        <mat-label>Регион</mat-label>
+        <mat-select #regionSelect (selectionChange)="regionChange(regionSelect.value)">
+          <mat-option *ngFor="let region of regions" [value]="region">
+            {{region.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex="100">
+        <mat-label>{{cityLabel}}</mat-label>
+        <mat-select #citySelect (selectionChange)="cityChange(citySelect.value)">
+        <mat-option *ngFor="let city of cities" [value]="city">{{city.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex="100">
+        <mat-label>Категория</mat-label>
+        <mat-select #categorySelect (selectionChange)="categoryChange(categorySelect.value)">
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex="100">
+        <mat-label>Подакатегория</mat-label>
+        <mat-select #subcategorySelect (selectionChange)="subcategoryChange(subcategorySelect.value)" (selectionChange)="findTask()">
+          <mat-option *ngFor="let subcategory of subcategories" [value]="subcategory">
+            {{subcategory.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="price">
+        <span>Цена</span>
+        <div fxLayout="row"
+        fxLayout.lt-sm="column"
+        fxLayoutAlign="space-between"
+        fxLayoutAlign.lt-sm="">
+          <mat-form-field fxFlex="49" fxFlex.lt-sm="100">
+              <span matPrefix>От &nbsp;</span>
+              <input #min type="number" (change)="changeMinPrice(min.value)" matInput>
+          </mat-form-field>
+          <mat-form-field fxFlex="49" fxFlex.lt-sm="100" >
+              <span matPrefix>До &nbsp;</span>
+              <input #max type="number" (change)="changeMaxPrice(max.value)" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button type="button" (click)="sortedTasks()" color="primary" value="Показать">Показать {{buttonLabel}}</button>
+    </div>
+</div>

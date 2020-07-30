@@ -1,0 +1,22 @@
+<div class="content"
+fxLayoutAlign.lt-md="center"
+fxLayout.lt-md="column"
+fxLayoutAlign="space-around"
+fxLayout="row">
+  <button mat-fab mat-icon-button aria-label="Filter tasks" color="primary"
+  (click)="openDialog()"
+  fxLayoutAlign="center center"
+  class="filter-button"
+  fxHide
+  fxShow.lt-md>
+    <mat-icon>filter_alt</mat-icon>
+  </button>
+  <div class="tasks" fxFlex="70" fxFlex.lt-md="100">
+      <app-task *ngFor="let task of tasks" [task]="task" (tasks)="taskHandler($event)"></app-task>
+  </div>
+  <div class="filter" fxHide.lt-md  fxLayoutAlign="center" fxFlex="30">
+    <br>
+    <app-filter (tasksToUp)="taskHandler($event)" fxFlex="100"></app-filter>
+  </div>
+</div>
+

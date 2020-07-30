@@ -1,0 +1,28 @@
+.filter{
+  height: 500px;
+  border-radius: 20px;
+  -webkit-box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+  box-shadow: -3px -1px 23px -9px rgba(0,0,0,0.75);
+}
+
+div{
+  padding: 10px;
+  width: 90%;
+}
+
+.price > div {
+  width: 100%;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
